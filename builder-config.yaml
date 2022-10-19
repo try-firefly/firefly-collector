@@ -1,0 +1,21 @@
+dist:
+  module: github.com/Sinkinson/otel-collector-custom-1
+  name: otel-custom-1
+  description: Custom OTel collector for testing. Second version
+  output_path: "./otel-collector-custom-1"
+  otelcol_version: "0.62.1"
+
+receivers:
+  - gomod: "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsfirehosereceiver"
+  - import: go.opentelemetry.io/collector/receiver/otlpreceiver
+    gomod: go.opentelemetry.io/collector v0.62.1
+
+exporters:
+  - import: go.opentelemetry.io/collector/exporter/loggingexporter
+    gomod: go.opentelemetry.io/collector v0.62.1
+  - import: go.opentelemetry.io/collector/exporter/otlphttpexporter
+    gomod: go.opentelemetry.io/collector v0.62.1
+  
+processors:
+  - import: go.opentelemetry.io/collector/processor/batchprocessor
+    gomod: go.opentelemetry.io/collector v0.62.1

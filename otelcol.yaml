@@ -1,0 +1,18 @@
+receivers:
+  awsfirehose:
+    endpoint: 0.0.0.0:4433
+    record_type: cwmetrics
+    # tls:
+    #   cert_file: server.crt
+    #   key_file: server.key
+
+exporters:
+  logging:
+    loglevel: debug
+
+service:
+  pipelines:
+    metrics:
+      receivers: [awsfirehose]
+      processors: []
+      exporters: [logging]
