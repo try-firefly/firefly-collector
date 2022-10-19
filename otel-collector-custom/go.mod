@@ -2,7 +2,7 @@
 
 module github.com/Sinkinson/otel-collector-custom
 
-go 1.18
+go 1.17
 
 require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsfirehosereceiver v0.53.0
