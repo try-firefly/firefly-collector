@@ -4,6 +4,7 @@ package main
 
 import (
 	"go.opentelemetry.io/collector/component"
+	prometheusremotewriteexporter "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusremotewriteexporter"
 	loggingexporter "go.opentelemetry.io/collector/exporter/loggingexporter"
 	otlphttpexporter "go.opentelemetry.io/collector/exporter/otlphttpexporter"
 	batchprocessor "go.opentelemetry.io/collector/processor/batchprocessor"
@@ -30,6 +31,7 @@ func components() (component.Factories, error) {
 	}
 
 	factories.Exporters, err = component.MakeExporterFactoryMap(
+		prometheusremotewriteexporter.NewFactory(),
 		loggingexporter.NewFactory(),
 		otlphttpexporter.NewFactory(),
 	)

@@ -1,7 +1,7 @@
 dist:
   module: github.com/Sinkinson/otel-collector-custom
   name: collector
-  description: Custom OTel collector for testing
+  description: Custom OTel collector
   output_path: "./otel-collector-custom"
   otelcol_version: "0.62.0"
 
