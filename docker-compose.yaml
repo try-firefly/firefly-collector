@@ -3,9 +3,9 @@ services:
   otel-collector:
     container_name: otel-collector
     image: otel-collector
-    # command: ["--config=/etc/otel-collector-config.yaml"]
-    # volumes:
-    #   - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
     ports:
       - 4433:4433 # for metrics
       - 4318:4318 # for traces

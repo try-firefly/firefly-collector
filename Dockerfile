@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 COPY /otel-collector-custom /
 
-COPY otelcol.yaml /etc/otel/config.yaml
+COPY otel-collector-config.yaml /etc/otel/config.yaml
 
 EXPOSE 4433 4318
 
