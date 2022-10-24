@@ -42,4 +42,4 @@ service:
     metrics:
       receivers: [awsfirehose]
       processors: []
-      exporters: [prometheusremotewrite]
+      exporters: [logging]

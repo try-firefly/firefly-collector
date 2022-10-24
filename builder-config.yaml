@@ -16,6 +16,8 @@ exporters:
     gomod: go.opentelemetry.io/collector v0.62.0
   - import: go.opentelemetry.io/collector/exporter/otlphttpexporter
     gomod: go.opentelemetry.io/collector v0.62.0
+  - import: go.opentelemetry.io/collector/exporter/otlpexporter
+    gomod: go.opentelemetry.io/collector v0.62.0
 
 processors:
   - import: go.opentelemetry.io/collector/processor/batchprocessor

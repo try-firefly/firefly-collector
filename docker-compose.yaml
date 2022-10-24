@@ -7,5 +7,5 @@ services:
     volumes:
       - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
     ports:
-      - 4433:4433 # for metrics
-      - 4318:4318 # for traces
+      - 4433:4433 # AWS firehose receiver for metrics
+      - 4318:4318 # OTLP HTTP receiver for traces
