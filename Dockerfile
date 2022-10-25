@@ -8,6 +8,4 @@ COPY otel-collector-config.yaml /etc/otel/config.yaml
 
 EXPOSE 4433 4318
 
-ENTRYPOINT ["/collector"]
-
-CMD ["--config", "/etc/otel/config.yaml"]
+CMD ["./collector", "--config", "/etc/otel/config.yaml"]
