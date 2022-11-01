@@ -6,24 +6,21 @@ receivers:
   awsfirehose:
     endpoint: 0.0.0.0:4433
     record_type: cwmetrics
-    # tls:
-    #   cert_file: server.crt
-    #   key_file: server.key
 
-# processors:
-#   batch:
-#     send_batch_size: 4000
-#     send_batch_max_size: 4000
-#     timeout: 10s
+processors:
+  batch:
+    send_batch_size: 4000
+    send_batch_max_size: 4000
+    timeout: 10s
 
 exporters:
-  # otlp:
-  #   endpoint: "<PROMSCALE_HOST>:<gRPC_PORT>"
-  #   tls:
-  #     insecure: true
-  #   sending_queue:
-  #     queue_size: 1000000
-  #   timeout: 10s
+  otlp:
+    endpoint: "promscale:9202"
+    tls:
+      insecure: true
+    sending_queue:
+      queue_size: 1000000
+    timeout: 10s
   logging:
     loglevel: debug
   prometheusremotewrite:
@@ -35,11 +32,11 @@ exporters:
 
 service:
   pipelines:
-    # traces:
-    #   receivers: [otlp]
-    #   processors: [batch]
-    #   exporters: [otlp]
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp]
     metrics:
       receivers: [awsfirehose]
-      processors: []
-      exporters: [logging]
+      processors: [batch]
+      exporters: [prometheusremotewrite]
