@@ -24,7 +24,7 @@ exporters:
   logging:
     loglevel: debug
   prometheusremotewrite:
-    endpoint: "http://localhost:9201/write"
+    endpoint: "http://promscale:9201/write"
     resource_to_telemetry_conversion:
       enabled: true # Convert resource attributes to metric labels
     tls:
