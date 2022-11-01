@@ -1,9 +1,9 @@
 version: '3'
 services:
   otel-collector:
-    container_name: otel-collector
-    image: otel-collector
-    command: ["--config=/etc/otel-collector-config.yaml"]
+    container_name: firefly-collector
+    image: firefly-collector
+    command: ["./collector", "--config=/etc/otel-collector-config.yaml"]
     volumes:
       - ./config/otel-collector-config.yaml:/etc/otel-collector-config.yaml
     ports:
