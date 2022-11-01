@@ -1,10 +1,10 @@
 FROM ubuntu:22.04
 
-COPY /otel-collector-custom /
+COPY /otel-collector /
 
-COPY /wait-for-it.sh /
+COPY /bin/wait-for-it.sh /
 
-COPY otel-collector-config.yaml /etc/otel/config.yaml
+COPY /config/otel-collector-config.yaml /etc/otel/config.yaml
 
 EXPOSE 4433 4318
 

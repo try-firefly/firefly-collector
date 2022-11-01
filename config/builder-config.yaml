@@ -1,8 +1,8 @@
 dist:
-  module: github.com/Sinkinson/otel-collector-custom
+  module: github.com/firefly/firefly-collector
   name: collector
   description: Custom OTel collector
-  output_path: "./otel-collector-custom"
+  output_path: "./otel-collector"
   otelcol_version: "0.62.0"
 
 receivers:
