@@ -1,7 +1,6 @@
 ## Firefly collector
 
-This repo contains Firefly's OpenTelemetry collector build. It also contains the necessary toolchain
-to build your own collector if you wish to add additional receivers, processors or exporters.
+This repo contains Firefly's OpenTelemetry collector build. The collector is included in the `data-pipeline` so there is no need to install or host it separately. However, this repo does contain the necessary toolchain to build your own collector if you wish to add additional receivers, processors or exporters. To do so please see setup instructions below.
 
 ## Setup
 
@@ -28,4 +27,4 @@ Run the following to build a docker image:
 $ docker build -t firefly-collector .
 ```
 
-You can then alter Firefly's `data-pipeline` [docker-compose](https://github.com/try-firefly/firefly-pipeline/blob/main/docker-compose.yaml) file to accomodate your new collector.
+You can then alter Firefly's `data-pipeline` [docker-compose](https://github.com/try-firefly/firefly-pipeline/blob/main/docker-compose.yaml) to accomodate your new collector.
